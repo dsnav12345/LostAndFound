@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% load static %}
+{% load widget_tweaks %}
+{% block headblock %}	
+	<link rel="stylesheet" type="text/css" href="{% static 'CSS/postitem.css' %}">
+{% endblock %}
+{% block content %}
+    <div class="box">
+        <div class="login">
+            <div id="in"></div>
+            <button type="button" class="button">POST</button>
+        </div>
+        <form class="input" method='POST', action='postitem' enctype="multipart/form-data">
+            {%csrf_token%}
+                {% for field in form.visible_fields %}
+                    {% render_field field class="details" placeholder=field.label %}
+                {% endfor %}
+                <button type="submit" class="submitbutton">post</button>
+        </form>
+    </div>
+{% endblock %}

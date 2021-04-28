@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+{% extends 'base.html'%}
+{% load static %}
+{% block headblock %}
+    <link rel="stylesheet" type="text/css" href="{% static 'CSS/imgsearch.css' %}">
+{% endblock %}
+{% block content %}
+  <div class="box">
+    <div class="login">
+      <div id="in"></div>
+      <button type="button" class="button">Search by Image</button>
+    </div>
+    <form class="input", method="POST" enctype="multipart/form-data" >
+      {%csrf_token%}
+      {{imgsearch}}
+      <button type="submit" class="submitbutton">Search</button>
+    </form>   
+  </div>
+{%endblock%}

@@ -1,0 +1,49 @@
+header{
+	text-align: center;
+}
+section{
+	width: 100%;
+	margin:auto;
+	background-image: url("bg1.jpg");
+	background-attachment : fixed;
+	padding: 60px;
+}
+.box{
+	background-color:#FFFFFF;
+	width: 500px;
+	margin: auto;
+	margin-top: 60px;
+	margin-bottom: 60px;
+	border: 2px solid #EDEEEE;
+	border-radius: 5px;
+}
+.name{
+	padding: 15px;
+}
+h2{
+	margin: 0;
+	display: inline-block;
+}
+.date{
+	float: right;
+	margin: 0;
+}
+img{
+	width: 100%;
+}
+.seepost{
+	padding: 15px;
+}
+.button{
+	width: 40%;
+	align-self: center;
+	padding: 10px 30px;
+	cursor: pointer;
+	display: block;
+	margin: 20px auto;
+	background:#374785; 
+	color: #ffffff;
+	border:0;
+	outline: none;
+	border-radius: 30px;
+}

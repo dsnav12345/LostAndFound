@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+{% extends 'base.html'%}
+{% load static %}
+{% block headblock %}
+    <link rel="stylesheet" type="text/css" href="{% static 'CSS/imgresults.css' %}">
+{% endblock %}
+{% block content %}
+{% if result %}
+  {% for im in result %}
+    <div class="box">
+        <div class="photo">
+          <img src="{% static im %}" width="500px" height=auto>
+        </div>
+    </div>
+  {%  endfor  %}
+{% endif %}
+{%endblock%}
+
+<img src="{% static im %}" width="500px" height=auto>
+
+<!--<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>img search result</title>
+  </head>
+  <body>
+    {% if result %}
+      {% for im in result %}
+        <img src="{% static im %}">
+      {%  endfor  %}
+    {% endif %}
+
+  </body>
+</html>
+-->

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% load static %}
+{% block headblock %}	
+	<link rel="stylesheet" type="text/css" href="{% static 'CSS/postdetails.css' %}">
+{% endblock %}
+{% block content %}
+    <div class="profile">
+        <div class="left">
+            <img src={{post.image.url}} alt="USER" width="550">
+            <h4>{{post.name}}</h4>
+    
+        </div>
+        <div class="right">
+            <div class="info">
+            <h3>information</h3>
+            <div class="info_data">
+                <div class="data">
+                    <h4>Name</h4>
+                    <p>{{post.name}}</p>
+                </div>
+                <div class="data">
+                    <h4>place</h4>
+                    <p>{{post.place}}</p>
+                </div>
+                <div class="data">
+                    <h4>date</h4>
+                    <p>{{post.date}}</p>
+                </div>
+                <div class="data">
+                    <h4>time</h4>
+                    <p>{{post.time}}</p>
+                </div>
+            </div>
+
+        <div class="founder">
+            <h3>Founder Details</h3>
+            <div class="info_data">
+                <div class="data">
+                    <h4>Firstname</h4>
+                    <p>{{post.user.first_name}}</p>
+                </div>
+                <div class="data">
+                    <h4>lastname</h4>
+                    <p>{{post.user.last_name}}</p>
+                </div>
+                <div class="data">
+                    <h4>username</h4>
+                    <p>{{post.user.username}}</p>
+                </div>
+                <div class="data">
+                    <h4>Email</h4>
+                    <p>{{post.user.email}}</p>
+                </div>
+                <div class="data">
+                    <h4>Phone</h4>
+                    <p>{{post.user.mobile}}</p>
+                </div>
+
+            </div>
+            
+        </div>
+        
+        </div>
+    </div>
+</div>
+{% endblock %}

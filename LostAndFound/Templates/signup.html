@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+{%  extends 'base.html'%}
+{% load static %}
+{% load widget_tweaks %}
+{% block headblock %}
+	<link rel="stylesheet" type="text/css" href="{% static 'CSS/signup.css'%}">
+	<title>Signup</title>
+{% endblock %}
+
+{% block content %}
+	<div class="messages">
+        {% for message in messages%}
+            <h3>{{message}}</h3>
+        {% endfor%}
+    </div>
+	<div class="box">
+		<div class="login">
+			<div id="in"></div>
+			<button type="button" class="button">Signup</button>
+		</div>
+		<form class="input" method='POST', action='signup' enctype="multipart/form-data">
+			{%csrf_token%}
+				{% for field in form.visible_fields %}
+					{% render_field field class="details" placeholder=field.label %}
+				{% endfor %}
+				<button type="submit" class="submitbutton">Register</button>
+		</form>
+	</div>
+{% endblock %}

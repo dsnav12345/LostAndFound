@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% load static %}
+{% load widget_tweaks %}
+{% block headblock %}	
+	<link rel="stylesheet" type="text/css" href="{% static 'CSS/profile.css' %}">
+	<title>My Profile</title>
+{% endblock %}
+{% block content %}
+	<div class="profile">
+		<div class="left">
+			{% if user.pic %}
+			<img src={{user.pic.url}} alt="USER" width="200">
+			{% else %}
+			<img src="{% static 'blankprof.png' %}" alt="USER" width="200">
+			{% endif %}
+			<h4>{{user.fisrt_name}} {{user.last_name}}</h4>
+			<p>{{user.username}}</p>
+			
+		</div>
+		<div class="right">
+			<div class="info">
+			<h3>information</h3>
+			<div class="info_data">
+				<div class="data">
+					<h4>Firstname</h4>
+					<p>{{user.first_name}}</p>
+				</div>
+				<div class="data">
+					<h4>lastname</h4>
+					<p>{{user.last_name}}</p>
+				</div>
+				<div class="data">
+					<h4>Username</h4>
+					<p>{{user.username}}</p>
+				</div>
+				<div class="data">
+					<h4>Email</h4>
+					<p>{{user.email}}</p>
+				</div>
+				<div class="data">
+					<h4>Phone</h4>
+					<p>{{user.mobile}}</p>
+				</div>
+
+			</div>
+			
+		</div>
+		
+		</div>
+	</div>
+{% endblock %}

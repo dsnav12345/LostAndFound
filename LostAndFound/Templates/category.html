@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+{% extends 'base.html'%}
+{% load static %}
+{% block headblock %}
+    <link rel="stylesheet" type="text/css" href="{% static 'CSS/index.css' %}">
+{% endblock %}
+{% block content %}
+    <div class="content">
+    <h3 style=" text-align:center"> Welcome to category</h3>
+    <div class="row">
+    {% if posts %}
+        {% for post in posts reversed%}
+            <div class="box">
+                <div class="name">
+                    <h2>{{post.name}}</h2>
+                    <p class="date">{{post.date}}</p>
+                </div>
+                <div class="photo">
+                    <img src={{post.image.url}}>
+                </div>
+                <div class="seepost">
+                    <a href="/{{post.id}}"><button class="button" type="button">see post</button></a>
+                </div>
+            </div>
+        {% endfor %}
+    {% endif %}
+    </div>
+    </div>
+    
+    <div class="cat">
+    <nav class="catnav">
+        <ul class="catul">
+            <li><a href="/category/Watches" style="color: #f1f1f1">Watches</a></li>
+            <li><a href="/category/Mobiles" style="color: #f1f1f1">Mobiles</a></li>
+            <li><a href="/category/MobileAccessories" style="color: #f1f1f1">MobileAccessories</a></li>
+            <li><a href="/category/Laptops" style="color: #f1f1f1">Laptops</a></li>
+            <li><a href="/category/Speakers" style="color: #f1f1f1">Speakers</a></li>
+            <li><a href="/category/Camera" style="color: #f1f1f1">Camera</a></li>
+            <li><a href="/category/Footwear" style="color: #f1f1f1">Footwear</a></li>
+            <li><a href="/category/WinterWear" style="color: #f1f1f1">WinterWear</a></li>
+            <li><a href="/category/WaterBottle" style="color: #f1f1f1">WaterBottle</a></li>
+            <li><a href="/category/Bag" style="color: #f1f1f1">Bag</a></li>
+            <li><a href="/category/Books" style="color: #f1f1f1">Books</a></li>
+            <li><a href="/category/Cycle" style="color: #f1f1f1">Cycle</a></li>
+            <li><a href="/category/BankingItems" style="color: #f1f1f1">BankingItems</a></li>
+            <li><a href="/category/Diaries" style="color: #f1f1f1">Diaries</a></li>
+            <li><a href="/category/Calculators" style="color: #f1f1f1">Calculators</a></li>
+            <li><a href="/category/Spectacles" style="color: #f1f1f1">Spectacles</a></li>
+            <li><a href="/category/Keys" style="color: #f1f1f1">Keys</a></li>
+            <li><a href="/category/Purse" style="color: #f1f1f1">Purse</a></li>
+        </ul>
+    </nav>
+    </div>
+{%endblock%}

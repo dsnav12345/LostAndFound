@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+{% extends 'base.html'%}
+{% load static %}
+{% block headblock %}
+   <link rel="stylesheet" type="text/css" href="{% static 'CSS/signup.css' %}">
+{% endblock %}
+{% block content %}
+<div class="box">
+   <input type="text" value="{{voice}}" class="details">
+   <form action ='voicesearch' method="GET">
+      <button type="submit" class="submitbutton">voice</button>
+   </form>
+</div>
+{%endblock%}

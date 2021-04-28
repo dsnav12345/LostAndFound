@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+{%  extends 'base.html'%}
+{% load static %}
+{% block headblock %}	
+	<link rel="stylesheet" type="text/css" href="{% static 'CSS/login.css' %}">
+	<title>Login</title>
+{% endblock %}
+{% block content %}
+    <div class="messages">
+        {% for message in messages%}
+            <h3>{{message}}</h3>
+        {% endfor%}
+    </div>
+    <div class="box">
+		<div class="login">
+			<div id="in"></div>
+			<button type="button" class="button">Login</button>
+		</div>
+		<form class="input", method="POST", action="login">
+			{%csrf_token%}
+			<input type="text" name="username" class="details" placeholder="username" required>
+			<input type="password" name="password" class="details" placeholder="password" required>
+			<button type="submit" class="submitbutton">Login</button>
+		</form>		
+	</div>
+{% endblock %}
